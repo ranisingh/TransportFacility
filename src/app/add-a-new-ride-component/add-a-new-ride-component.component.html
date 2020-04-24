@@ -1,0 +1,125 @@
+
+<div class="main_wrapper">
+    <div class="home_wrap inner_wrapper">
+        <img src="./assets/images/vechicle-logo.png" />
+        
+        <div class="form_wrapper">
+            <h3>Add a New Ride</h3>
+            
+            <form [formGroup]="AddrideForm" (ngSubmit)="onSubmit()" #myForm> 
+
+                
+                <div class="form_group">
+                    <label>Employee ID</label>
+                    <input type="text" name="empid" formControlName="empid" [ngClass]="{ 'is-invalid': submitted && f.empid.errors  }"  />
+                   
+                    <div *ngIf="submitted && f.empid.errors" class="invalid-feedback">
+                        <div *ngIf="f.empid.errors.required">Employee ID is required</div>
+                    </div>
+
+                </div><!--form_group-->
+
+                <div class="form_group">
+                    <label>Vehicle Type</label>
+                    <select formControlName="vechileType">
+                        <option value="" selected="true">--Vehicle Type--</option>
+                        <option value="car">Car</option>
+                        <option value="bike">Bike</option>
+                    </select>
+                    <!--<input type="text" name="vechileType" formControlName="vechileType" [ngClass] ="{'is-invalid' : submitted && f.vechileType.errors}" />-->
+                    <div *ngIf="submitted && f.vechileType.errors" class="invalid-feedback">
+                        <div *ngIf="f.vechileType.errors.required">Vehicle Type is required</div>
+                    </div>
+                </div><!--form_group-->
+
+
+                <div class="form_group">
+                    <label>Vehicle No </label>
+                    <input type="text" name="vechileno" formControlName="vechileno" [ngClass] ="{'is-invalid' : submitted && f.vechileno.errors}" />
+                    <div *ngIf="submitted && f.vechileno.errors" class="invalid-feedback">
+                        <div *ngIf="f.vechileno.errors.required">Vehicle No is required</div>
+                    </div>
+                </div><!--form_group-->
+
+
+                <div class="form_group">
+                    <label>Vacant Seats</label>
+                    <input type="text" name="vechileSeat" formControlName="vechileSeat" [ngClass] ="{'is-invalid' : submitted && f.vechileSeat.errors}"  />
+                    <div *ngIf="submitted && f.vechileSeat.errors" class="invalid-feedback">
+                        <div *ngIf="f.vechileSeat.errors.required">Vacant Seat is required</div>
+                    </div>
+                </div><!--form_group-->
+
+
+                <div class="form_group">
+                    <label>Time </label>
+                    <select formControlName="time">
+                        <option value="" selected="true">--Select Time--</option>
+                        <option value="12pm">12pm</option>
+                        <option value="13pm">13pm</option>
+                        <option value="14pm">14pm</option>
+                        <option value="15pm">15pm</option>
+                        <option value="16pm">16pm</option>
+                        <option value="17pm">17pm</option>
+                        <option value="18pm">18pm</option>
+                        <option value="19pm">19pm</option>
+                        <option value="20pm">20pm</option>
+                        <option value="21pm">21pm</option>
+                        <option value="22pm">22pm</option>
+                        <option value="23pm">23pm</option>
+                        <option value="24pm">24pm</option>
+                        <option value="1am">1am</option>
+                        <option value="2am">2am</option>
+                        <option value="3am">3am</option>
+                        <option value="4am">4am</option>
+                        <option value="5am">5am</option>
+                        <option value="6am">6am</option>
+                        <option value="7am">7am</option>
+                        <option value="8am">8am</option>
+                        
+                        <option value="9am">9am</option>
+                        <option value="10am">10am</option>
+                        <option value="11am">11am</option>
+                        <option value="12am">12am</option>
+                       
+                    </select>
+                    
+                    <div *ngIf="submitted && f.time.errors" class="invalid-feedback">
+                        <div *ngIf="f.time.errors.required">Time is required</div>
+                    </div>
+                </div><!--form_group-->
+
+
+                <div class="form_group">
+                    <label>Pick-up Point</label>
+                    <input type="text" name="pickPoint" formControlName="pickPoint" [ngClass] ="{'is-invalid' : submitted && f.pickPoint.errors}" />
+                    <div *ngIf="submitted && f.pickPoint.errors" class="invalid-feedback">
+                        <div *ngIf="f.pickPoint.errors.required">Pick-up point is required</div>
+                    </div>
+                </div><!--form_group-->
+
+
+                <div class="form_group">
+                    <label>Destination </label>
+                    <input type="text" name="Destination" formControlName="Destination" [ngClass] ="{'is-invalid' : submitted && f.Destination.errors}"  />
+                    <div *ngIf="submitted && f.Destination.errors" class="invalid-feedback">
+                        <div *ngIf="f.Destination.errors.required">Destination is required</div>
+                    </div>
+                </div><!--form_group-->
+
+                <div class="row"  *ngIf="showMsg">
+                    
+                      <p class="alert alert-success">
+                          <strong>Registration Success!</strong> 
+            
+                      </p>
+                   
+                  </div>
+
+                <button type="submit" class="primary_btn">Add</button>
+            </form>
+        </div>
+
+</div><!--home_wrap-->
+</div><!--main_wrapper-->
+  

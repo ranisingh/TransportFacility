@@ -1,0 +1,25 @@
+
+<div class="main_wrapper">
+    <div class="home_wrap">
+        <img src="./assets/images/vechicle-logo.png" />
+<h1>Pick Your Ride</h1>
+
+
+
+
+<button class="primary_btn" (click)="getCarRide()" >Car Ride</button>
+
+<button class="primary_btn"  >Bike Ride</button>
+
+<div class="car_rideData" *ngIf="CarData.length !== 0" >
+
+    <div class="rid_card" *ngFor = "let data of CarData">
+        <h3>Employee Id - {{data.empid}}</h3>
+        <p><span>Time</span>{{data.time}}</p>
+        <p><span>Vichle Number</span>{{data.vechileno}}</p>
+        <p><span>Destination</span>{{data.Destination}}</p>
+      
+</div><!--rid_card-->
+</div><!--car_rideData-->
+</div><!--home_wrap-->
+</div><!--main_wrapper-->
